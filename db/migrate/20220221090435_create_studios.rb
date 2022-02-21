@@ -6,6 +6,7 @@ class CreateStudios < ActiveRecord::Migration[6.1]
       t.text :descript
       t.references :user, null: false, foreign_key: true
       t.integer :price
+      t.string :photo_url
 
       t.timestamps
     end
