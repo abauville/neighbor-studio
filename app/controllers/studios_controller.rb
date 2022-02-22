@@ -3,7 +3,7 @@ class StudiosController < ApplicationController
 
   def index
     # @studios = Studio.all
-    @studios = policy_scope(Studio).order(created_at: :desc)
+    @studios = policy_scope(Studio)
   end
 
   # def show
