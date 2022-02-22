@@ -5,4 +5,11 @@ class StudioPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def show?
+    # everyone can view a studio, so show? is always true
+    true
+  end
+
+  
 end
