@@ -7,28 +7,28 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    # everyone can view a studio, so show? is always true
-    user_is_owner?
+    # only logged in user are allowed to create the studio
+    user_is_loggedin?
   end
 
   def create?
-    # only the studio's owner are allowed to create the restaurant
-    user_is_owner?
+    # only logged in user are allowed to create the studio
+    user_is_loggedin?
   end
 
   def update?
-    # only the studio's owner are allowed to update the restaurant
-    user_is_owner?
+    # only logged in user are allowed to update the studio
+    user_is_loggedin?
   end
 
   def destroy?
-    # only the studio's owner are allowed to destroy the restaurant
-    user_is_owner?
+    # only logged in user are allowed to destroy the studio
+    user_is_loggedin?
   end
 
   private
 
-  def user_is_owner?
+  def user_is_loggedin?
     user == record.user
   end
 end
