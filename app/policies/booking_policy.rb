@@ -6,6 +6,10 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    true
+  end
+
   def show?
     # only logged in user are allowed to create the studio
     user_is_loggedin?
