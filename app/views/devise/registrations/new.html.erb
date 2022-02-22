@@ -1,7 +1,14 @@
+
+<div class="jumbotron">
+  <h1 class="text-center">NeighborStudio</h1>
+    <p class="text-center">Why use a home studio,
+when your Neighbor has one?</p>
+</div>
+
 <div class="container mt-5">
   <div class="row d-flex justify-content-center">
     <div class="col-md-6"></div>
-      <div class="card px-5 py-5 ml-5 mr-5" id="form1">
+      <div class="card px-5 py-5 corner-round" id="form1">
     <h2 class="text-center">Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                   <%= f.error_notification %>
@@ -21,7 +28,7 @@
         <%= f.button :submit, "Sign up", class: "btn btn-dark w-100" %>
         </div>
         <div class="mt-2 mb-2">
-          <%= render "devise/shared/links"%>
+          <%= render "studios/navbar"%>
         </div>
       </div>
 
@@ -32,4 +39,9 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="container">
+  <p></p>
+  <p></p>
 </div>

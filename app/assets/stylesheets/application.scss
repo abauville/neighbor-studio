@@ -11,3 +11,76 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.jumbotron {
+  // align-items: center;
+  // display: flex;
+  padding-top: 200px;
+  background-image: url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.7.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-color: #898888;
+  height: 500px;
+  color: white;
+  -moz-transform: scale(1.7);
+  -webkit-transform: scale(1.7);
+  transform: scale(1.7);
+}
+
+.corner-round {
+  border-radius: 20px;
+}
+
+.jumbotron > h1 {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.jumbotron > p {
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* General Image Styling */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Flexbox-based solution: */
+.images--flex {
+  width: 100%;
+  display: flex;
+}
+
+.images--flex > * {
+  flex: 1;
+}
+
+.images--flex__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.images--flex__inner > * {
+  width: 50%;
+  height: 50%;
+}
+
+/* CSS Grid Solution: */
+.images--grid {
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+}
+
+.images--grid > *:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+canvas {
+  border-radius: 10px;
+}

@@ -27,6 +27,7 @@ class StudiosController < ApplicationController
   end
 
   private
+
   def set_studio
     @studio = Studio.find(params[:id])
     authorize @studio

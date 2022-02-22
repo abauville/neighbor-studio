@@ -1,5 +1,41 @@
-<h1>Studios#show</h1>
-<p>Find me in app/views/studios/show.html.erb</p>
+<%= render partial: "shared/navbar" %>
 
-<p><%= @studio.name %></p>
-<%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container mt-5">
+  <h1><%= @studio.name %></h1>
+    <div class="mt-3">
+      <p>
+        <%= @studio.description %>
+      </p>
+    </div>
+  <div>
+    <div class="images--flex">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+      <div class="images--flex__inner">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body mt-4">
+      <h2>Address:</h2>
+        <p><%= @studio.address %></p>
+      <h2>Price:</h2>
+        <p>$<%= @studio.price %></p>
+
+    </div>
+  </div>
+    <h2>Location:</h2>
+    <div id='map' style='height: 500px;' class="container-fluid mb-5"></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibmFpcmRlc2lnbnMiLCJhIjoiY2t6N3oxZGtyMWY5ejJ2cGhtc283bWtoYiJ9.2Xm0lvF_0guXITdMgqokVg';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+    });
+    </script>
+</div>
