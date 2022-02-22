@@ -1,14 +1,15 @@
 class StudiosController < ApplicationController
   before_action :set_studio, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # @studios = Studio.all
     @studios = policy_scope(Studio)
   end
 
-  # def show
+  def show
   #   @studio = Studio.find(params[:id])
-  # end
+  end
 
   def new
     @studio = Studio.new
