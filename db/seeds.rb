@@ -3,10 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rigitngs' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
 
 User.destroy_all
 # Flat.destroy_all
