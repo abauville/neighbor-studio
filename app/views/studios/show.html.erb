@@ -1,5 +1,38 @@
-<h1>Studios#show</h1>
-<p>Find me in app/views/studios/show.html.erb</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>
 
-<p><%= @studio.name %></p>
-<%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill %>
+
+<div class="container">
+  <div>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill %>
+
+    <h1><%= @studio.name %></h1>
+    <p>
+      This is an example of a posts created with Ruby on Rails. We are using Bootstrap to beautify the web application and learn how to add some styles to our views.
+    </p>
+    <span class="label label-primary"> Last update <%= @studio.updated_at.strftime("%b %d, %Y") %></span>
+  </div>
+</div>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p>
+        <%= @studio.description %>
+        ...
+      </p>
+    </div>
+    <div class="panel-footer">By @your_user_name</div>
+  </div>
+</div>
