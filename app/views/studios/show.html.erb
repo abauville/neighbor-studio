@@ -1,17 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">NeighborStudio</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Studios</a>
-      <a class="nav-item nav-link" href="#">About</a>
-    </div>
-  </div>
-</nav>
-
+<%= render partial: "shared/navbar" %>
 
 <div class="container mt-5">
   <h1><%= @studio.name %></h1>
@@ -22,12 +9,12 @@
     </div>
   <div>
     <div class="images--flex">
-        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
       <div class="images--flex__inner">
-        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
       </div>
     </div>
   </div>
