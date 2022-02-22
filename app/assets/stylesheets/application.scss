@@ -26,6 +26,17 @@
   transform: scale(1.7);
 }
 
+.jumbo-2 {
+  // align-items: center;
+  // display: flex;
+  padding-top: 200px;
+  background-image: url("https://images.unsplash.com/photo-1602700716983-f9a7058f22b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80");
+  background-size: cover;
+  background-color: #898888;
+  height: 500px;
+  color: white;
+}
+
 .corner-round {
   border-radius: 20px;
 }
