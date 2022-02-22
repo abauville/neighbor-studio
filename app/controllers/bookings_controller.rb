@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @studio = Studio.find(params[:studio_id])
     @booking.studio = @studio
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to studio_path(@studio)
     else
