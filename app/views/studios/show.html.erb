@@ -21,24 +21,28 @@
 </div>
 <div class="container mt-4">
   <div class="d-flex justify-content-between w-screen">
-  <div class="d-flex flex-grow-1">
-    <div class="d-flex flex-grow-1 justify-content-between pe-5">
-      <div class="d-flex flex-column">
-        <h2>Address:</h2>
-        <p><%= @studio.address %></p>
-        <h2>Price:</h2>
-        <p>¥<%= @studio.price %></p>
+    <div class="d-flex w-35">
+      <div class="studio-booking-form shadow p-5">
+        <div class="">
+          <p class="text-label text-truncate">
+            <span class="text-lg text-white">Address: </span><%= @studio.address %>
+          </p>
+          <p class="text-label">
+            <span class="text-lg text-white">Price: </span>¥<%= @studio.price %>/hr
+          </p>
+        </div>
+        <div>
+          <%= render partial: "bookings/form", locals: {booking: Booking.new, studio: @studio} %>
+        </div>
       </div>
-      <%= link_to new_studio_booking_path(@studio), class: "studio-booking-btn" do %>
-        <p class="mb-0">Book now!</p>
-      <% end %>
+    </div>
+    <div class="d-flex w-60">
+      <div
+        data-controller="mapbox"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        style='width: 100%; height: 500px;'
+        class="mb-5">
+      </div>
     </div>
   </div>
-    <div
-      data-controller="mapbox"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      style='width: 60%; height: 500px;'
-      class="mb-5">
-    </div>
-    </div>
 </div>
