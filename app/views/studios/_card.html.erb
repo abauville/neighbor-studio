@@ -1,5 +1,16 @@
-<%= link_to studio_path(studio) do %>
-<div class="studio-card">
-  <h3><%= studio.name %></h3>
+<div class="studio-card shadow px-4 py-2 m-2" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(studio.photo.key, crop: :fill) %>);">
+    <div class="d-flex flex-column justify-content-between text-white">
+      <h3 class="mt-2"><%= studio.name %></h3>
+      <div class="d-flex justify-content-between studio-info p-3">
+        <div class="w-50">
+          <p class="mb-0 text-truncate">Location: <%= studio.address %></p>
+          <p class="pb-0">Price/hr: <%= studio.price %></p>
+        </div>
+        <div class="w-25">
+          <%= link_to studio_path(studio), class: "studio-info-btn py-2 px-1" do %>
+            <p class="mb-0">More Info</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>
-<% end %>
