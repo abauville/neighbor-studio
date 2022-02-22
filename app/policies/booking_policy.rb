@@ -6,6 +6,25 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    # everyone can view a studio, so show? is always true
+    user_is_owner?
+  end
+
+  def create?
+    # only the studio's owner are allowed to create the restaurant
+    user_is_owner?
+  end
+
+  def update?
+    # only the studio's owner are allowed to update the restaurant
+    user_is_owner?
+  end
+
+  def destroy?
+    # only the studio's owner are allowed to destroy the restaurant
+    user_is_owner?
+  end
 
   private
 
