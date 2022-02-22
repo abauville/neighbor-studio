@@ -5,6 +5,8 @@
   <% if user_signed_in? %>
     <p><strong>name: </strong><%= current_user.name %></p>
     <p><strong>email: </strong><%= current_user.email %></p>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+
   <% else %>
     <p>you are not signed in</p>
   <% end %>
