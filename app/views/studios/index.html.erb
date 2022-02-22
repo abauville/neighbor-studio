@@ -1,6 +1,7 @@
+<%= render partial: "shared/navbar" %>
 <div class="container-fluid mt-3">
-  <h1>Studios in your area</h1>
-  <div class="studios-list mx-auto p-5">
+  <h1 class="text-center">Studios in your area</h1>
+  <div class="studios-list mx-auto px-5 py-3">
     <% @studios.each do |studio| %>
       <%= render partial: "card", locals: {studio: studio} %>
     <% end %>
