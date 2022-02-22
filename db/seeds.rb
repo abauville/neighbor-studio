@@ -11,11 +11,15 @@ User.destroy_all
 adjectives = ['nice', 'decent', 'lovely', 'high-end', 'simple']
 places = ['shibuya', 'harajuku', 'meguro', 'ofuna', 'shimbashi']
 <<<<<<< HEAD
+<<<<<<< HEAD
 descriptions = ["Owned by a nice grandma", "Come and meet us", "You won't be disturbed",
                 "You can be as loud as you want"]
 =======
 descriptions = ["Owned by a nice grandma", "Come and meet us", "You won't be disturbed", "You can be as loud as you want"]
 >>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
+=======
+descriptions = ["Owned by a nice grandma", "Come and meet us", "You won't be disturbed", "You can be as loud as you want"]
+>>>>>>> 765a745e7c676abedba5ab2cf5009baa79538d04
 
 photos = {
   'just a room' => [
@@ -36,28 +40,37 @@ photos = {
     'https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/O/OffTheRecord_1215_01-egGv7lLUwrFYPgjjIxXPxG.J2VjHldFX.jpg',
     'https://i.pinimg.com/originals/25/71/3f/25713fdfa829a9513536661f3eaad441.jpg',
 <<<<<<< HEAD
+<<<<<<< HEAD
     'https://i.pinimg.com/originals/09/82/2b/09822bb7d471aa8f15fb78b2f4c14f7a.jpg'
   ],
 =======
     'https://i.pinimg.com/originals/09/82/2b/09822bb7d471aa8f15fb78b2f4c14f7a.jpg'],
 >>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
+=======
+    'https://i.pinimg.com/originals/09/82/2b/09822bb7d471aa8f15fb78b2f4c14f7a.jpg'],
+>>>>>>> 765a745e7c676abedba5ab2cf5009baa79538d04
 
   'soundproof room' => [
     'https://images.easytechjunkie.com/soundproof-room.jpg',
     'https://www.tomorrowsleep.com/wp-content/uploads/2019/01/How-To-Soundproof-A-Bedroom-1.jpg',
     'https://www.grooveboxstudios.com/wp-content/uploads/2020/01/soundproof-room-activites.jpg',
 <<<<<<< HEAD
+<<<<<<< HEAD
     'https://thenewsvoice.com/wp-content/uploads/2021/03/MMTacustix.jpeg'
   ],
 =======
     'https://thenewsvoice.com/wp-content/uploads/2021/03/MMTacustix.jpeg'],
 >>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
+=======
+    'https://thenewsvoice.com/wp-content/uploads/2021/03/MMTacustix.jpeg'],
+>>>>>>> 765a745e7c676abedba5ab2cf5009baa79538d04
   'living room' => [
     'https://i.pinimg.com/originals/55/4e/10/554e100eab2b21c73036669b1a85493d.jpg',
     'https://i.pinimg.com/originals/ca/80/24/ca8024cfe8c4496131be3d86e6afa009.jpg',
     'https://storage.googleapis.com/gen-atmedia/2/2016/02/4bdd18e9b5a9e39b39cd1b476f1c87dad11404b0.jpeg',
     'https://i.pinimg.com/originals/d5/4b/1e/d54b1e15150823f92940ba9792ca0c41.jpg',
     'https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1560366499000/photosp/98f094ae-e218-436f-99a4-c0653decce47/stock-photo-wall-guitar-living-room-home-collection-couch-natural-light-electric-guitar-guitars-98f094ae-e218-436f-99a4-c0653decce47.jpg'
+<<<<<<< HEAD
 <<<<<<< HEAD
   ],
   'bathroom' => [
@@ -67,17 +80,26 @@ photos = {
   ]
 }
 =======
+=======
+>>>>>>> 765a745e7c676abedba5ab2cf5009baa79538d04
   ] ,
   'bathroom'=> [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqI74LpzAhL44nSBmgwb4tzDOm7WziJasSgA&usqp=CAU',
     'https://st.hzcdn.com/simgs/pictures/bathrooms/guitar-sink-castletech-inc-img~7cc11463040794d4_4-2720-1-df3f83c.jpg',
     'https://i.redd.it/0o5m1nsjpof01.jpg'
   ]}
+<<<<<<< HEAD
 >>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
 types = photos.keys
 counter = 0
 10.times do
   user = User.create(email: Faker::Internet.email, password: 123_456)
+=======
+types = photos.keys
+counter = 0
+10.times do
+  user = User.create(email: Faker::Internet.email, password: 123456)
+>>>>>>> 765a745e7c676abedba5ab2cf5009baa79538d04
   rand(0..2).times do
     place = places.sample(1)[0]
     adj = adjectives.sample(1)[0]
@@ -87,10 +109,14 @@ counter = 0
       address: "#{Faker::Address.street_address}, #{place}",
       description: "#{adj} #{type}. #{descriptions.sample(1)[0]}.",
 <<<<<<< HEAD
+<<<<<<< HEAD
       price: rand(5..100) * 100
 =======
       price: rand(5..100)*100
 >>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
+=======
+      price: rand(5..100)*100
+>>>>>>> 765a745e7c676abedba5ab2cf5009baa79538d04
     )
     studio.user = user
     file = URI.open(photos[type].sample(1)[0])

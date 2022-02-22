@@ -28,6 +28,11 @@ class StudiosController < ApplicationController
 
   private
 
+  def set_studio
+    @studio = Studio.find(params[:id])
+    authorize @studio
+  end
+
   def studio_params
     params[:studio][:user] = current_user
     params.require(:studio).permit(:name, :address, :description, :price, :photo, :user)
