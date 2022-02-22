@@ -1,0 +1,23 @@
+.studio-card {
+  min-width: 360px;
+  // flex-grow: 1;
+  // width: 400px;
+  max-width: 400px;
+  min-height: 200px;
+  object-fit: cover;
+  background-position: center;
+  display: flex;
+  border-radius: 16px;
+  // justify-content: center;
+  // padding: 16px;
+  .studio-info {
+    background-color: rgba(70, 70, 70, 0.5);
+    border-radius: 16px;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    .studio-info-left {
+      max-width: 60%;
+    }
+  }
+}
