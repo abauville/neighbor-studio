@@ -15,6 +15,7 @@
 
 
 <div class="container">
+  <h1><%= @studio.name %></h1>
   <div>
     <div class="container">
         <div class="row imagetiles">
@@ -33,45 +34,20 @@
         </div>
     </div>
 
-<div class="row">
-  <div class="column">
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-  </div>
-  <div class="column">
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
 
-  </div>
-  <div class="column">
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
-  </div>
-  </div>
-
-
-
-    <h1><%= @studio.name %></h1>
     <p>
-      This is an example of a posts created with Ruby on Rails. We are using Bootstrap to beautify the web application and learn how to add some styles to our views.
+      <%= @studio.description %>
     </p>
-    <span class="label label-primary"> Last update <%= @studio.updated_at.strftime("%b %d, %Y") %></span>
   </div>
 </div>
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-body">
-      <p>
-        <%= @studio.description %>
-        ...
-      </p>
+      <h2>Address:</h2>
+        <p><%= @studio.address %></p>
+      <h2>Price:</h2>
+        <p>$<%= @studio.price %></p>
+
     </div>
     <div class="panel-footer">By @your_user_name</div>
   </div>
