@@ -34,13 +34,11 @@
       <% end %>
     </div>
   </div>
-    <div id='map' style='width: 60%; height: 500px;' class="mb-5"></div>
-      <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoibmFpcmRlc2lnbnMiLCJhIjoiY2t6N3oxZGtyMWY5ejJ2cGhtc283bWtoYiJ9.2Xm0lvF_0guXITdMgqokVg';
-      var map = new mapboxgl.Map({
-        container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
-      });
-      </script>
+    <div
+      data-controller="mapbox"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      style='width: 60%; height: 500px;'
+      class="mb-5">
+    </div>
     </div>
 </div>
