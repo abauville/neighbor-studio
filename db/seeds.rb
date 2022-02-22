@@ -9,6 +9,9 @@
 require 'rest-client'
 require_relative './seeds_helpers'
 
+# number of users (between 0..8 studio/user)
+n = 20
+
 
 User.destroy_all
 
@@ -19,7 +22,7 @@ descriptions = ["Owned by a nice grandma", "Come and meet us", "You won't be dis
 photos = picture_urls
 types = photos.keys
 counter = 0
-n = 2
+
 n.times do |i_user|
   puts "User #{i_user}/#{n}"
   user = User.create(email: Faker::Internet.email, password: 123456)
