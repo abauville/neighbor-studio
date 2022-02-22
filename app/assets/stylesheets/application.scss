@@ -38,18 +38,44 @@ p {
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-div.imagetiles div.col-lg-3.col-md-3.col-sm-3.col-xs-6 {
-  padding: 0px;
+/* General Image Styling */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.row {
+/* Flexbox-based solution: */
+.images--flex {
+  width: 100%;
+  display: flex;
+}
+
+.images--flex > * {
+  flex: 1;
+}
+
+.images--flex__inner {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 4px;
+  align-items: stretch;
 }
 
-img {
-  width: 200px; /* You can set the dimensions to whatever you want */
-  height: 200px;
-  object-fit: cover;
+.images--flex__inner > * {
+  width: 50%;
+  height: 50%;
+}
+
+/* CSS Grid Solution: */
+.images--grid {
+  display: grid;
+  width: 100%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+}
+
+.images--grid > *:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
 }

@@ -33,6 +33,16 @@
             </div>
         </div>
     </div>
+    <p>With flexbox:</p>
+    <div class="images--flex">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+      <div class="images--flex__inner">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+      </div>
+    </div>
 
 
     <p>
