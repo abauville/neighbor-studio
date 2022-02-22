@@ -1,6 +1,6 @@
 class StudiosController < ApplicationController
   before_action :set_studio, only: [:show]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     # @studios = Studio.all
@@ -8,7 +8,7 @@ class StudiosController < ApplicationController
   end
 
   def show
-  #   @studio = Studio.find(params[:id])
+    #   @studio = Studio.find(params[:id])
   end
 
   def new
@@ -28,20 +28,11 @@ class StudiosController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 
->>>>>>> 78bec99445df15a42443d79b317e8f9326e019b2
   def set_studio
     @studio = Studio.find(params[:id])
     authorize @studio
   end
-<<<<<<< HEAD
->>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
-=======
->>>>>>> 78bec99445df15a42443d79b317e8f9326e019b2
 
   def studio_params
     # params[:studio][:user] = current_user
