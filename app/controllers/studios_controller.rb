@@ -6,9 +6,9 @@ class StudiosController < ApplicationController
     @studios = policy_scope(Studio)
   end
 
-  # def show
-  #   @studio = Studio.find(params[:id])
-  # end
+  def show
+    @studio = Studio.find(params[:id])
+  end
 
   def new
     @studio = Studio.new
@@ -27,16 +27,14 @@ class StudiosController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-=======
+
+  def studio_params
+    params[:studio][:user] = current_user
+    params.require(:studio).permit(:name, :address, :description, :price, :photo, :user)
+  end
+
   def set_studio
     @studio = Studio.find(params[:id])
     authorize @studio
-  end
->>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
-
-  def studio_params
-    # params[:studio][:user] = current_user
-    params.require(:studio).permit(:name, :address, :description, :price, :photo, :user)
   end
 end
