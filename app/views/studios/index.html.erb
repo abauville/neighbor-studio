@@ -1,10 +1,6 @@
-<h1>Studios#index</h1>
-<p>Find me in app/views/studios/index.html.erb</p>
-<ul>
+<h1>Studios in your area</h1>
+<div class="studios-list">
   <% @studios.each do |studio| %>
-    <li>
-    <p><%= studio.name %></p>
-    <%= cl_image_tag studio.photo.key, height: 300, width: 400, crop: :fill %>
-    </li>
+    <%= render partial: "card", locals: {studio: studio} %>
   <% end %>
-</ul>
+</div>
