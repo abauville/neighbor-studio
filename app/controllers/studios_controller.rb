@@ -28,12 +28,19 @@ class StudiosController < ApplicationController
 
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 78bec99445df15a42443d79b317e8f9326e019b2
   def set_studio
     @studio = Studio.find(params[:id])
     authorize @studio
   end
+<<<<<<< HEAD
 >>>>>>> f92a271447e1bee5860f808b2129f6798a1abd11
+=======
+>>>>>>> 78bec99445df15a42443d79b317e8f9326e019b2
 
   def studio_params
     # params[:studio][:user] = current_user
