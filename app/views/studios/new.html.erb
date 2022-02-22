@@ -1,0 +1,15 @@
+<h1>Studios#new</h1>
+<p>Find me in app/views/studios/new.html.erb</p>
+
+<div class="container">
+  <%= simple_form_for @studio do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+
+
+</div>
