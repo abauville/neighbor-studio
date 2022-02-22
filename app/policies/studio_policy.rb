@@ -13,7 +13,7 @@ class StudioPolicy < ApplicationPolicy
 
   def create?
     # only the studio's owner are allowed to create the restaurant
-    user_is_owner?
+    true
   end
 
   def update?
