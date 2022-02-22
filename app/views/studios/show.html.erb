@@ -16,7 +16,47 @@
 
 <div class="container">
   <div>
-    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="container">
+        <div class="row imagetiles">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+              <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+  <div class="column">
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+  </div>
+  <div class="column">
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+
+  </div>
+  <div class="column">
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+    <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive" %>
+  </div>
+  </div>
+
+
 
     <h1><%= @studio.name %></h1>
     <p>
