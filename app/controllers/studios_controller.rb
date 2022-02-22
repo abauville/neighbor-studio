@@ -4,7 +4,6 @@ class StudiosController < ApplicationController
   def index
     # @studios = Studio.all
     @studios = policy_scope(Studio)
-    raise
   end
 
   # def show
