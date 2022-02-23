@@ -6,8 +6,8 @@ class BookingsController < ApplicationController
 
   def new
     # redirect_to new_user_session_path unless current_user
-    @booking = Booking.new
     @studio = Studio.find(params[:studio_id])
+    @booking = Booking.new(studio: @studio)
     authorize @booking
   end
 
