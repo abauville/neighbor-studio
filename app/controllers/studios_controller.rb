@@ -5,6 +5,12 @@ class StudiosController < ApplicationController
   def index
     # @studios = Studio.all
     @studios = policy_scope(Studio)
+    @markers = @studios.geocoded.map do |studio|
+      {
+        lat: studio.latitude,
+        lng: studio.longitude
+      }
+    end
   end
 
   def show
