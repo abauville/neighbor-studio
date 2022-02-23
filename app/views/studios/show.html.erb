@@ -19,23 +19,26 @@
     </div>
   </div>
 </div>
-<div class="container">
-  <div class="panel panel-default">
-    <div class="panel-body mt-4">
-      <h2>Address:</h2>
+<div class="container mt-4">
+  <div class="d-flex justify-content-between w-screen">
+  <div class="d-flex flex-grow-1">
+    <div class="d-flex flex-grow-1 justify-content-between pe-5">
+      <div class="d-flex flex-column">
+        <h2>Address:</h2>
         <p><%= @studio.address %></p>
-      <h2>Price:</h2>
-        <p>$<%= @studio.price %></p>
-
+        <h2>Price:</h2>
+        <p>¥<%= @studio.price %></p>
+      </div>
+      <%= link_to new_studio_booking_path(@studio), class: "studio-booking-btn" do %>
+        <p class="mb-0">Book now!</p>
+      <% end %>
     </div>
   </div>
-    <h2>Location:</h2>
-    <div id='map' style='height: 500px;' class="container-fluid mb-5"></div>
-    <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmFpcmRlc2lnbnMiLCJhIjoiY2t6N3oxZGtyMWY5ejJ2cGhtc283bWtoYiJ9.2Xm0lvF_0guXITdMgqokVg';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-    });
-    </script>
+    <div
+      data-controller="mapbox"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      style='width: 60%; height: 500px;'
+      class="mb-5">
+    </div>
+    </div>
 </div>
