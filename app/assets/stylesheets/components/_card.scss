@@ -2,11 +2,13 @@
   a {
     text-decoration: none;
   }
-  min-width: 360px;
-  max-width: 420px;
+  width: 400px;
   min-height: 280px;
   display: flex;
   border-radius: 16px;
+  width: -webkit-fill-available;
+  background-size: cover;
+  background-position: center;
   .studio-info {
     background-color: rgba(70, 70, 70, 0.5);
     border-radius: 16px;

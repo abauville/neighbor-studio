@@ -19,6 +19,20 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     this.#getUserLocation()
+    this.#cardsHoverHighlightsMarkers()
+  }
+
+  #cardsHoverHighlightsMarkers() {
+    const cards = document.querySelectorAll(".studio-card");
+    const markers = document.querySelectorAll(".marker");
+    cards.forEach((card, index) => {
+      card.addEventListener("mouseenter", (event) => {
+        markers[index].classList.add("highlighted");
+      });
+      card.addEventListener("mouseleave", (event) => {
+        markers[index].classList.remove("highlighted");
+      });
+    });
   }
 
   #addMarkersToMap() {
