@@ -1,0 +1,5 @@
+<%= simple_form_for [studio, booking] do |f| %>
+  <%= f.input :start_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Start Jamming" %>
+  <%= f.input :end_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Bro Home" %>
+  <%= f.submit value: "Book now!", class: "studio-booking-btn mx-auto mt-5" %>
+<% end %>
