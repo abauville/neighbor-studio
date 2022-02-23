@@ -1,4 +1,4 @@
-<div class="studio-card shadow-lg m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.15)), url(<%= cl_image_path(studio.photo.key, crop: :fill, width: 420, height: 280) %>);">
+<div class="studio-card shadow-lg m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.15)), url(<%= cl_image_path(studio.photo.key) %>);">
   <%= link_to studio_path(studio), class: "d-flex px-4 py-2 w-100" do %>
     <div class="d-flex flex-column justify-content-end w-100 text-white">
       <div class="d-flex justify-content-between studio-info p-3">
