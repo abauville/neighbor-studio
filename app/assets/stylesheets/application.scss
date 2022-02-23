@@ -96,3 +96,16 @@ img {
 canvas {
   border-radius: 10px;
 }
+
+.main-container {
+  display: flex;
+}
+
+#sidebar {
+  margin-right: 40px; // right: 0;
+  padding-top: 30px;
+  margin-bottom: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}

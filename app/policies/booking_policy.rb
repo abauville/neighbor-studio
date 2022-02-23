@@ -2,37 +2,25 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
-  def new?
-    true
-  end
-
-  def show?
-    # only logged in user are allowed to create the studio
-    user_is_loggedin?
-  end
-
   def create?
-    # only logged in user are allowed to create the studio
-    user_is_loggedin?
+    !user_is_host?
   end
 
   def update?
-    # only logged in user are allowed to update the studio
-    user_is_loggedin?
-  end
-
-  def destroy?
-    # only logged in user are allowed to destroy the studio
-    user_is_loggedin?
+    user_is_musician? || user_is_host?
   end
 
   private
 
-  def user_is_loggedin?
+  def user_is_musician?
     user == record.user
+  end
+
+  def user_is_host?
+    user == record.studio.user
   end
 end
