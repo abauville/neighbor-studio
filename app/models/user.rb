@@ -6,7 +6,7 @@ class User < ApplicationRecord
   before_save :default_values
 
   has_many :studios, dependent: :destroy
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   def default_values
     self.name ||= self.email[...self.email.index('@')] # note self.status = 'P' if self.status.nil? might be safer (per @frontendbeauty)
