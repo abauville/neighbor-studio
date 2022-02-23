@@ -4,14 +4,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="navbar-nav justify-content-between w-100">
-      <div class="d-flex">
+    <div class="navbar-nav justify-content-center justify-content-lg-between w-100">
+      <div class="d-flex flex-column text-center flex-lg-row">
         <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="<%= studios_path %>">Studios</a>
         <a class="nav-item nav-link" href="#">About</a>
       </div>
-      <div class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="nav-item dropdown d-flex justify-content-center">
+        <%= image_tag "default-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
