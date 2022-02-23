@@ -16,11 +16,6 @@ class StudioPolicy < ApplicationPolicy
     true
   end
 
-  def edit?
-    raise
-    update?
-  end
-
   def update?
     # only the logged in user are allowed to update the restaurant
     user_is_owner?
@@ -33,7 +28,7 @@ class StudioPolicy < ApplicationPolicy
 
   private
 
-  def user_is_loggedin?
+  def user_is_owner?
     user == record.user
   end
 end
