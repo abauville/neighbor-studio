@@ -19,3 +19,13 @@
     line-height: 0.1em;
   }
 }
+
+.marker.highlighted {
+  z-index: 1;
+  .price-container {
+    background-color: rgb(255, 93, 75);
+  }
+  i {
+    color: rgb(255, 93, 75);
+  }
+}

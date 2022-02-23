@@ -13,12 +13,26 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v11"
+      style: "mapbox://styles/markiec/ckzz5088s000415n2taxrb9q9"
     })
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     this.#getUserLocation()
+    this.#cardsHoverHighlightsMarkers()
+  }
+
+  #cardsHoverHighlightsMarkers() {
+    const cards = document.querySelectorAll(".studio-card");
+    const markers = document.querySelectorAll(".marker");
+    cards.forEach((card, index) => {
+      card.addEventListener("mouseenter", (event) => {
+        markers[index].classList.add("highlighted");
+      });
+      card.addEventListener("mouseleave", (event) => {
+        markers[index].classList.remove("highlighted");
+      });
+    });
   }
 
   #addMarkersToMap() {
