@@ -4,7 +4,7 @@ import mapboxgl from "mapbox-gl"
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Object
   }
 
   connect() {
@@ -19,16 +19,14 @@ export default class extends Controller {
   }
 
   addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    });
+    new mapboxgl.Marker()
+      .setLngLat([ this.markersValue.lng, this.markersValue.lat ])
+      .addTo(this.map)
   }
 
   fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    bounds.extend([ this.markersValue.lng, this.markersValue.lat ])
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }
