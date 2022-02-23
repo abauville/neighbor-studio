@@ -5,10 +5,18 @@ class StudiosController < ApplicationController
   def index
     # @studios = Studio.all
     @studios = policy_scope(Studio)
+    @markers = @studios.geocoded.map do |studio|
+      {
+        lat: studio.latitude,
+        lng: studio.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { studio: studio }),
+        marker_html: render_to_string(partial: "marker", locals: { studio: studio })
+      }
+    end
   end
 
   def show
-    @marker = { lat: @studio.latitude, lng: @studio.longitude }
+    @markers = [{ lat: @studio.latitude, lng: @studio.longitude }]
   end
 
   def new

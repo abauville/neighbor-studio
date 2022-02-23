@@ -5,7 +5,7 @@ import * as turf from '@turf/turf'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Object
+    markers: Array
   }
 
   connect() {
@@ -15,26 +15,43 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v11"
     })
-    this.addMarkersToMap()
-    this.fitMapToMarkers()
-    this.getUserLocation()
+
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
+    this.#getUserLocation()
   }
 
-  addMarkersToMap() {
-    new mapboxgl.Marker()
-      .setLngLat([ this.markersValue.lng, this.markersValue.lat ])
-      .addTo(this.map)
+  #addMarkersToMap() {
+    this.markersValue.forEach((marker) => {
+      if (marker.marker_html) {
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+        // Create HTML element for custom marker
+
+        const customMarker = document.createElement("div");
+        customMarker.className = 'marker';
+        customMarker.innerHTML = marker.marker_html.trim();
+
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup)
+          .addTo(this.map)
+      } else {
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .addTo(this.map)
+      }
+    });
   }
 
-  fitMapToMarkers() {
+  #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
-    bounds.extend([ this.markersValue.lng, this.markersValue.lat ])
+    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
-  getUserLocation() {
+  #getUserLocation() {
     const success = (position) => {
-      this.getDistanceFromStudio(position.coords)
+      this.#getDistanceFromStudio(position.coords)
     }
 
     const error = () => {
@@ -49,14 +66,14 @@ export default class extends Controller {
     }
   }
 
-  getDistanceFromStudio(userLocation) {
+  #getDistanceFromStudio(userLocation) {
     var user = turf.point([userLocation.longitude, userLocation.latitude]);
-    var toStudio = turf.point([ this.markersValue.lng, this.markersValue.lat ]);
+    var toStudio = turf.point([ this.markersValue[0].lng, this.markersValue[0].lat ]);
     var distance = turf.distance(user, toStudio);
-    this.displayDistance(distance.toFixed(2))
+    this.#displayDistance(distance.toFixed(2))
   }
 
-  displayDistance(distance) {
+  #displayDistance(distance) {
     const el =  document.getElementById("user-distance")
     el.innerHTML = `
       <span class="text-lg text-white">
