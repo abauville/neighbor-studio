@@ -1,0 +1,21 @@
+.marker {
+  text-align:center;
+  position: relative;
+  p, i {
+    padding: 2px 8px;
+    margin: 0;
+  }
+  .price-container {
+    background-color: white;
+    border-radius: 8px;
+    margin: 0;
+  }
+  p {
+    line-height: 1.2em;
+  }
+  i {
+    color: white;
+    font-size: 40px;
+    line-height: 0.1em;
+  }
+}

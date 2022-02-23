@@ -20,11 +20,23 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(this.map)
+      if (marker.marker_html) {
+        const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+        // Create HTML element for custom marker
+
+        const customMarker = document.createElement("div");
+        customMarker.className = 'marker';
+        customMarker.innerHTML = marker.marker_html.trim();
+
+        new mapboxgl.Marker(customMarker)
+          .setLngLat([ marker.lng, marker.lat ])
+          .setPopup(popup)
+          .addTo(this.map)
+      } else {
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat ])
+          .addTo(this.map)
+      }
     });
   }
 
