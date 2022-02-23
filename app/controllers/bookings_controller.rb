@@ -18,9 +18,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to studio_path(@studio)
+      redirect_to bookings_path
     else
-      render :new
+      render "studios/show"
     end
   end
 
