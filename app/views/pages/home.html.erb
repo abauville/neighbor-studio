@@ -1,10 +1,9 @@
+<%= render partial: "shared/navbar" %>
+
 <div class="jumbo-2">
 
   <div class="container float-right">
       <% if user_signed_in? %>
-      <p><strong>Signed in as: </strong><%= current_user.name %></p>
-         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "studio-booking-btn" %>
-
     <% else %>
       <p>you are not signed in</p>
     <% end %>
@@ -13,7 +12,7 @@
     <p class="text-center">Why use a home studio,
     when your Neighbor has one?</p>
   <div class="text-center">
-    <%= link_to "Find studios now!", studios_path, class: "btn draw-border rounded mb-6" %>
+    <%= link_to "Find studios now!", studios_path, class: " btn draw-border rounded mb-6" %>
   </div>
 
 </div>

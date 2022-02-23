@@ -9,8 +9,7 @@
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="<%= studios_path %>">Studios</a>
       <a class="nav-item nav-link" href="#">About</a>
-      <a class="nav-item nav-link" href="#">      <b-avatar></b-avatar>
-</a>
+      <a class="nav-item nav-link" id="avatar" href="#"><b-avatar></b-avatar></a>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,9 +18,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav justify-content-center justify-content-lg-between w-100">
       <div class="d-flex flex-column text-center flex-lg-row">
-        <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="<%= studios_path %>">Studios</a>
-        <a class="nav-item nav-link" href="#">About</a>
       </div>
       <div class="nav-item dropdown d-flex justify-content-center">
         <%= image_tag "default-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
