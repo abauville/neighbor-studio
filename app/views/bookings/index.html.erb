@@ -19,3 +19,47 @@
 
     <li><%= link_to "Your booking at the #{booking.studio.name} is from #{new_start_date} to #{new_end_date} " , studio_path(booking.studio) %></li>
     <% end %>
+
+<div class="container">
+  <div class="mt-5">
+      <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
+        <!-- Basic Plan -->
+        <div class="row align-items-center">
+          <div class="col-12 col-md-4">
+            <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
+              Booking at
+            </h4>
+          </div>
+
+          <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
+            <li>
+              <i class="fa fa-check text-success-m2 text-110 mr-2 mt-1"></i>
+              <span>
+                <span class="text-110">Donec id elit.</span>
+              Fusce dapibus...
+              </span>
+            </li>
+
+            <li class="mt-25">
+              <i class="fa fa-check text-success-m2 text-110 mr-2 mt-1"></i>
+              <span class="text-110">
+                Placerat duis
+            </span>
+            </li>
+
+            <li class="mt-25">
+              <i class="fa fa-times text-danger-m3 text-110 mr-25 mt-1"></i>
+              <span class="text-110">
+                Tortor mauris
+            </span>
+            </li>
+          </ul>
+
+          <div class="col-12 col-md-4 text-center">
+            <a href="#" class="f-n-hover btn btn-info btn-raised px-4 py-25 w-75 text-600">Get Started</a>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>
