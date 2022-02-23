@@ -58,6 +58,11 @@ export default class extends Controller {
 
   displayDistance(distance) {
     const el =  document.getElementById("user-distance")
-    el.innerHTML = `<span class="text-lg text-white">Distance: </span> ${distance} km`
+    el.innerHTML = `
+      <span class="text-lg text-white">
+        <i class="fas fa-map-marked-alt me-2"></i>Distance:
+      </span>
+      ${distance} km
+    `
   }
 }
