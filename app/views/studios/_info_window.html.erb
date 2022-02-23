@@ -1,0 +1,12 @@
+<div class="studio-card-small shadow-lg m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.15)), url(<%= cl_image_path(studio.photo.key, crop: :fill, width: 210, height: 140) %>);">
+  <%= link_to studio_path(studio), class: "" do %>
+
+
+    <div>
+      <p><%= studio.name.capitalize %></p>
+      <p><strong>¥<%= studio.price %>/hr</strong></p>
+    </div>
+
+
+  <% end %>
+</div>

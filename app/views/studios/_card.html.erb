@@ -3,13 +3,13 @@
     <div class="d-flex flex-column justify-content-end w-100 text-white">
       <div class="d-flex justify-content-between studio-info p-3">
         <div class="studio-info-left">
-          <p class="mb-0 text-truncate">Location: <%= studio.address %></p>
+          <p class="mb-0 text-truncate"><%= studio.name.capitalize %></p>
           <p class="mb-0">¥<%= studio.price %>/hr</p>
         </div>
         <div class="w-50 d-flex justify-content-end">
-        <div class="studio-info-btn py-2 px-2">
-          <p class="mb-0">More Info</p>
-        </div>
+          <div class="studio-info-btn py-2 px-2">
+            <p class="mb-0">More Info</p>
+          </div>
         </div>
       </div>
     </div>

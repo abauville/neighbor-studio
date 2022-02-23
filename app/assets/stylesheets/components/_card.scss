@@ -24,3 +24,28 @@
     }
   }
 }
+
+.studio-card-small {
+  border-radius: 16px;
+  min-width: 180px;
+  max-width: 210px;
+  min-height: 140px;
+  position: relative;
+
+
+
+  a {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    color: white;
+    text-shadow: 0 0 4px black;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
