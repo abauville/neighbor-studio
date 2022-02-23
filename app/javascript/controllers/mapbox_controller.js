@@ -68,7 +68,7 @@ export default class extends Controller {
 
   #getDistanceFromStudio(userLocation) {
     var user = turf.point([userLocation.longitude, userLocation.latitude]);
-    var toStudio = turf.point([ this.markersValue.lng, this.markersValue.lat ]);
+    var toStudio = turf.point([ this.markersValue[0].lng, this.markersValue[0].lat ]);
     var distance = turf.distance(user, toStudio);
     this.#displayDistance(distance.toFixed(2))
   }
