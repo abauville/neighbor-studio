@@ -19,13 +19,17 @@
     </div>
   </div>
 </div>
+
 <div class="container mt-4">
   <div class="d-flex justify-content-between w-screen">
     <div class="d-flex w-35">
       <div class="studio-booking-form shadow p-5">
         <div>
-          <p class="text-label text-truncate">
+          <p class="text-label">
             <span class="text-lg text-white">Address: </span><%= @studio.address %>
+          </p>
+          <p id="user-distance" class="text-label">
+            <span class="text-lg text-white">Distance: </span>N/A
           </p>
           <p class="text-label">
             <span class="text-lg text-white">Price: </span>¥<%= @studio.price %>/hr
