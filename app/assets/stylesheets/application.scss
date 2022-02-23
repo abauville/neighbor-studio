@@ -96,3 +96,22 @@ img {
 canvas {
   border-radius: 10px;
 }
+
+.main-container {
+  display: flex;
+}
+
+#sidebar {
+  // position: fixed;
+  // height: auto;
+  // margin-left: 50%;
+  // bottom: 0;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // background: #ccc;
+  flex: 1 1 auto;
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

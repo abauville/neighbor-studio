@@ -1,16 +1,17 @@
 <%= render partial: "shared/navbar" %>
-<div class="container-fluid mt-3">
-  <h1 class="text-center">Studios in your area</h1>
-  <div class="studios-list mx-auto px-5 py-3">
-    <% @studios.each do |studio| %>
-      <%= render partial: "card", locals: {studio: studio} %>
-    <% end %>
+    <h1 class="text-center">Studios in your area</h1>
+<div class="main-container">
+  <div class="container-fluid mt-4">
+    <div class="studios-list col-xs-6">
+      <% @studios.each do |studio| %>
+        <%= render partial: "card", locals: {studio: studio}%>
+      <% end %>
+    </div>
   </div>
-</div>
-<div class="container-fluid mt-3"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @marker.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  style='width: 60%; height: 500px;'
-  class="mb-5">
+  <div class="container-fluid mt-4 mr-5 pr-5 " id="sidebar"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @marker.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    style='width: 100%; height: 800px;'>
+    </div>
 </div>
