@@ -45,4 +45,12 @@
       </div>
     </div>
   </div>
+    <div
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @marker.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      style='width: 60%; height: 500px;'
+      class="mb-5">
+    </div>
+    </div>
 </div>
