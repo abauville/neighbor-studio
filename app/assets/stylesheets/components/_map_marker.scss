@@ -20,7 +20,7 @@
   }
 }
 
-.marker.highlighted {
+.marker.highlighted, .marker:hover {
   z-index: 1;
   .price-container {
     background-color: rgb(255, 93, 75);
