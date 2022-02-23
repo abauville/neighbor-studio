@@ -14,7 +14,7 @@ class StudiosController < ApplicationController
   end
 
   def show
-    @marker = { lat: @studio.latitude, lng: @studio.longitude }
+    @markers = [{ lat: @studio.latitude, lng: @studio.longitude }]
   end
 
   def new
