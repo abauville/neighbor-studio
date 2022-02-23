@@ -16,14 +16,19 @@ class StudioPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    raise
+    update?
+  end
+
   def update?
     # only the logged in user are allowed to update the restaurant
-    user_is_loggedin?
+    user_is_owner?
   end
 
   def destroy?
     # only the logged in user are allowed to destroy the restaurant
-    user_is_loggedin?
+    user_is_owner?
   end
 
   private
