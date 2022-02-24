@@ -4,7 +4,21 @@ class StudiosController < ApplicationController
 
   def index
     # @studios = Studio.all
+
     @studios = policy_scope(Studio).geocoded
+    @title = "All our studios"
+    @search_msg = ""
+    if params[:address]
+      params[:distance] = params[:distance] || 2
+      studios_found = @studios.near(params[:address], params[:distance])
+      if studios_found.empty?
+        @search_msg = "We couldn't find studios within #{params[:distance]} km of #{params[:address]}"
+      else
+        @studios = studios_found
+        @title = "Studios within #{params[:distance]} km of #{params[:address]}"
+      end
+
+    end
     @markers = @studios.map do |studio| #@studios.geocoded.map do |studio|
       {
         lat: studio.latitude,
