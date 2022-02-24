@@ -1,6 +1,7 @@
-
 <div class="container">
   <div class="card-studio-name">
-    <h2>studio name</h2>
+    <% @bookings.each do |booking| %>
+      <%= booking.studio.name %>
+    <% end %>
   </div>
 </div>
