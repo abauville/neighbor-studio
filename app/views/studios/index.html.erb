@@ -1,4 +1,16 @@
 <%= render partial: "shared/navbar" %>
+
+
+
+
+<%= form_with url: studios_path, method: :get do |form| %>
+  <%= form.label :query, "Find a studio near:" %>
+  <%= form.text_field :query, placeholder: "Shibuya" %>
+  <%= form.submit "Search" %>
+<% end %>
+
+
+
 <h1 class="text-center mt-4git ">Studios in your area</h1>
 <div class="main-container">
   <div class="container-fluid mt-4">
