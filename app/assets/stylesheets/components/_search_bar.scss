@@ -1,0 +1,26 @@
+.search_bar {
+  background-color: $dark;
+  color: $white;
+  padding: 0 16px 8px 16px;
+  input {
+    border-radius: 4px;
+    background-color: #dde6ee;
+    padding: 4px 4px 4px 8px;
+    border: none;
+  }
+  #distance-input {
+    width: 40px;
+  }
+  #address-input {
+    width: 250px;
+  }
+  input#submit-btn {
+    background-color: #5c646a;
+    color: $white;
+
+    padding: 4px 24px;
+    &:hover {
+      background-color: #afb5ba;
+    }
+  }
+}

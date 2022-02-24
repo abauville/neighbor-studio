@@ -34,8 +34,6 @@
   min-height: 140px;
   position: relative;
 
-
-
   a {
     padding: 8px;
     display: flex;
@@ -63,4 +61,8 @@
   .owner-booking-action{
     min-width: 40%;
   }
+}
+  
+.extra-margin {
+  margin: 0 330px !important;
 }

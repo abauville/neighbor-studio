@@ -1,5 +1,11 @@
 <%= render partial: "shared/navbar" %>
-<h1 class="text-center mt-4git ">Studios in your area</h1>
+
+<%= render partial: "search_bar" %>
+<div class="search_msg">
+  <p><%= @search_msg %></p>
+</div>
+
+<h1 class="text-center mt-4git "><%= @title %></h1>
 <div class="main-container">
   <div class="container-fluid mt-4">
     <div class="studios-list col-xs-6">
