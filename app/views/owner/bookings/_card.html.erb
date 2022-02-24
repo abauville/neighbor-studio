@@ -1,18 +1,24 @@
 <div class="owner-booking-card p-3 m-3 shadow">
   <div>
-    <p>2.20.2022 12:00 - 15:00</p>
-    <p>Rentee's name</p>
-    <p>Total: ¥10000</p>
+    <h2>
+      <%= booking.start_date.strftime('%m-%d-%Y')%>
+      <%= booking.start_date.strftime('%H:%M')%> -
+      <%= booking.end_date.strftime('%H:%M')%>
+    </h2>
+    <p class="text-xl text-capitalize mb-0"><%= booking.user.name %></p>
+    <p class="text-xl">Total: ¥ <%= booking.total_price %></p>
   </div>
-  <div class="owner-booking-action d-flex flex-column justify-content-between">
-    <p class="mb-0 mt-4 text-center">Pending</p>
+  <div class="owner-booking-action d-flex flex-column justify-content-evenly">
+    <h2 class="text-center text-capitalize"><%= booking.status %></h2>
     <div class="d-flex justify-content-evenly">
+      <% if booking.pending? %>
       <div class="owner-action-btn btn-accept py-2 px-3">
-        <p class="mb-0">Accept</p>
+        <%= link_to 'Accept', accept_booking_path(booking), method: :patch %>
       </div>
       <div class="owner-action-btn btn-decline py-2 px-3">
-        <p class="mb-0">Decline</p>
+        <%= link_to 'Decline', refuse_booking_path(booking), method: :patch %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
