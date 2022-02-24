@@ -28,7 +28,7 @@
             </ul>
 
             <div class="col-12 col-md-4 text-center">
-        <%= cl_image_tag studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+              <%= cl_image_tag studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
 
             </div>
           </div>
@@ -37,5 +37,5 @@
     </div>
   </div>
 <% end %>
-<div class="text-center">    <%= link_to "Add a Studio", new_studio_path, class: "btn draw-border rounded mb-6", id: "add-studio" %>
+<div class="text-center my-5">    <%= link_to "Add a Studio", new_studio_path, class: "btn draw-border rounded mb-6", id: "add-studio" %>
 </div>
