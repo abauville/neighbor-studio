@@ -15,6 +15,5 @@ class Owner::BookingsController < ApplicationController
     @refused_bookings = bookings.map(&:studio).uniq.map do |studio|
       { studio_name: studio.name, studio_bookings: studio.bookings.refused }
     end
-    raise
   end
 end
