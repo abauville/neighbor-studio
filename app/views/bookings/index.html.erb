@@ -26,21 +26,26 @@
           <div class="row align-items-center">
             <div class="col-12 col-md-4">
               <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
-                <%= booking.studio.name.capitalize %> on <%= new_start_date %>, owner: <%= booking.studio.user.name %>, rentee: <%= booking.user.name %>
-
+                <%= booking.studio.name.capitalize %>
               </h4>
+              <h5>
+                on <%= new_start_date %>
+              </h5>
+              <p>
+                owner: <%= booking.studio.user.name %>
+              </p>
             </div>
 
             <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
               <li>
-                <span>
-                  <span class="text-110 text-center"><p class="text-center h4"> from <%= start_new_string[11..15] %> to <%= end_new_string[11..15] %> </p></span>
-                </span>
+                 <span class="text-110 text-center"><p class="text-center h4"> from <%= start_new_string[11..15] %> to <%= end_new_string[11..15] %> </p></span>
               </li>
             </ul>
 
             <div class="col-12 col-md-4 text-center">
-              <%= link_to "view studio", studio_path(booking.studio), class: "btn btn-dark" %>
+              <span class="text-110 text-center"><p class="text-center h4"> <%= booking.status %> </p></span>
+
+              <%= link_to "view studio", studio_path(booking.studio), class: "btn btn-dark mt-5 " %>
             </div>
           </div>
 
