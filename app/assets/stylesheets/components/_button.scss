@@ -96,8 +96,6 @@
 
 .draw-border {
   @include btn-border-drawing(white, lightblue, 4px, bottom, right);
-
-  border-radius: 16px !important;
 }
 
 //=== Button styling, semi-ignore
@@ -112,7 +110,6 @@
 
   &:focus {
     outline: 2px dotted white;
-    border-radius: 16px;
   }
 }
 
