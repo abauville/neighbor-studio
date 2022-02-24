@@ -30,6 +30,40 @@
   }
 }
 
+.owner-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  // border: #212529 solid 1px;
+  border-radius: 24px;
+  // color: #212529;
+  &:hover {
+    // background-color: #212529;
+    // border: white solid 2px;
+    font-weight: 400;
+    // color: white;
+  }
+}
+
+.btn-accept {
+  background-color: rgb(166, 221, 166);
+  color: white;
+  &:hover {
+    background-color: rgb(23, 93, 23);
+    color: white;
+  }
+}
+
+.btn-decline {
+  background-color: lightcoral;
+  color: white;
+  &:hover {
+    background-color: rgb(173, 54, 54);
+    color: white;
+
+  }
+}
 //=== Drawing effect
 
 @mixin btn-border-drawing(
