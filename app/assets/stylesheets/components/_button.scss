@@ -99,7 +99,7 @@
 }
 
 //=== Button styling, semi-ignore
-.btn {
+.btn-square {
   background: none;
   border: none;
   cursor: pointer;
@@ -123,4 +123,9 @@
   @include btn-border-drawing(black, lightblue, 4px, bottom, right);
   border: 0px solid black;
   padding-top: 59px !important;
+  justify-content: center;
+}
+
+.add-studio > .studio-info-btn {
+  border: transparent solid 1px !important;
 }
