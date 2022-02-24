@@ -138,12 +138,13 @@
 }
 
 #add-studio {
-  @include btn-border-drawing-two(black, lightblue, 4px);
-  border: 0px solid black;
-  padding-top: 59px !important;
+  @include btn-border-drawing-two(#41464d, lightblue, 3px);
+  border: 0px solid #41464d;
+  padding-top: 43px !important;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 51px !important;
   font-style: normal;
+  height: 102px;
 }
 
 .add-studio > .studio-info-btn {
