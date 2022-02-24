@@ -30,6 +30,15 @@
   }
 }
 
+.accept-btn{
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  border: #212529 solid 1px;
+  border-radius: 24px;
+  color: #212529;
+}
+
 //=== Drawing effect
 
 @mixin btn-border-drawing(
