@@ -32,6 +32,18 @@ class BookingsController < ApplicationController
     raise
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = 1
+    render :index
+  end
+
+  def refuse
+    @booking = Booking.find(params[:id])
+    @booking.status = 2
+    render :index
+  end
+
   private
 
   def booking_params
