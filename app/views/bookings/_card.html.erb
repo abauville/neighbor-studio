@@ -1,0 +1,17 @@
+<div class="owner-booking-card p-3 m-5 shadow">
+  <div>
+    <h2>
+      <%= booking.start_date.strftime('%m-%d-%Y')%>
+      <%= booking.start_date.strftime('%H:%M')%> -
+      <%= booking.end_date.strftime('%H:%M')%>
+    </h2>
+    <p class="text-xl text-capitalize mb-0"><%=booking.studio.name.capitalize%></p>
+    <p class="text-xl">Total: ¥ <%= booking.total_price %></p>
+  </div>
+  <div class="owner-booking-action d-flex flex-column justify-content-evenly">
+    <h2 class="text-center text-capitalize mt-5"><%= booking.status %></h2>
+    <div class="d-flex justify-content-evenly">
+      <%= link_to "view studio", studio_path(booking.studio), class: "studio-info-btn py-2 px-2 mb-5" %>
+    </div>
+  </div>
+</div>
