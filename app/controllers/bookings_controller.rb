@@ -34,13 +34,13 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.status = 1
+    @booking.accepted!
     render :index
   end
 
   def refuse
     @booking = Booking.find(params[:id])
-    @booking.status = 2
+    @booking.refused!
     render :index
   end
 
