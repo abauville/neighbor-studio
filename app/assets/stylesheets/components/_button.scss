@@ -44,6 +44,12 @@
     font-weight: 400;
     // color: white;
   }
+  text-decoration: none !important;
+}
+
+.owner-action-btn > a {
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .btn-accept {
@@ -61,7 +67,6 @@
   &:hover {
     background-color: rgb(173, 54, 54);
     color: white;
-
   }
 }
 //=== Drawing effect
