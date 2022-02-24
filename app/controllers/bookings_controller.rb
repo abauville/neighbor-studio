@@ -33,15 +33,15 @@ class BookingsController < ApplicationController
   end
 
   def accept
-    @booking = Booking.find(params[:id])
+    authorize @booking = Booking.find(params[:id])
     @booking.accepted!
-    render :index
+    redirect_to owner_bookings_path
   end
 
   def refuse
-    @booking = Booking.find(params[:id])
+    authorize @booking = Booking.find(params[:id])
     @booking.refused!
-    render :index
+    redirect_to owner_bookings_path
   end
 
   private

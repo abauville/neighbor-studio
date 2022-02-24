@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :studios, only: %i[index show new create] do
     resources :bookings, only: %i[new create]
   end
+  namespace :owner do
+    resources :bookings, only: :index
+    resources :studios, only: :index
+  end
   resources :bookings, only: %i[index edit update] do
     member do
       patch :accept
