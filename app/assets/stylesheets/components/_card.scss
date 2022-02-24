@@ -54,4 +54,8 @@
 
 .owner-booking-card {
   display: flex;
+  justify-content: space-between;
+  .owner-booking-action{
+    min-width: 40%;
+  }
 }
