@@ -13,6 +13,10 @@ class Booking < ApplicationRecord
     refused: 2
   }
 
+  def total_price
+    (start_date.to_time.to_i - end_date.to_time.to_i).abs / 3600 * studio.price
+  end
+
   def end_after_start?
     if start_date > end_date
       errors.add(:end_date, "should be later than the start date")

@@ -30,9 +30,71 @@
   }
 }
 
+.owner-action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  // border: #212529 solid 1px;
+  border-radius: 24px;
+  // color: #212529;
+  &:hover {
+    // background-color: #212529;
+    // border: white solid 2px;
+    font-weight: 400;
+    // color: white;
+  }
+}
+
+.btn-accept {
+  background-color: rgb(166, 221, 166);
+  color: white;
+  &:hover {
+    background-color: rgb(23, 93, 23);
+    color: white;
+  }
+}
+
+.btn-decline {
+  background-color: lightcoral;
+  color: white;
+  &:hover {
+    background-color: rgb(173, 54, 54);
+    color: white;
+
+  }
+}
 //=== Drawing effect
 
 @mixin btn-border-drawing(
+  $color: #ccc,
+  $hover: black,
+  $width: 2px,
+  $vertical: top,
+  $horizontal: left,
+  $duration: 0.25s
+) {
+  box-shadow: inset 0 0 0 $width $color;
+  color: $color;
+  transition: color $duration $duration/3;
+  position: relative;
+
+  &::before {
+    $h-side: if($horizontal == "left", "right", "left");
+
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+
+  &::after {
+    $v-side: if($vertical == "top", "bottom", "top");
+
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+}
+
+@mixin btn-border-drawing-two(
   $color: #ccc,
   $hover: black,
   $width: 2px,
@@ -59,20 +121,6 @@
     #{$horizontal}: 0;
   }
 
-  &::before {
-    $h-side: if($horizontal == "left", "right", "left");
-
-    border-#{$vertical}-width: $width;
-    border-#{$h-side}-width: $width;
-  }
-
-  &::after {
-    $v-side: if($vertical == "top", "bottom", "top");
-
-    border-#{$v-side}-width: $width;
-    border-#{$horizontal}-width: $width;
-  }
-
   &:hover {
     color: $hover;
 
@@ -82,6 +130,7 @@
       transition: border-color 0s, width $duration, height $duration;
       width: 100%;
       height: 100%;
+      border-radius: 15px;
     }
 
     &::before {
@@ -95,11 +144,11 @@
 }
 
 .draw-border {
-  @include btn-border-drawing(white, lightblue, 4px, bottom, right);
+  @include btn-border-drawing(white, lightblue, bottom, right);
 }
 
 //=== Button styling, semi-ignore
-.btn {
+.btn-square {
   background: none;
   border: none;
   cursor: pointer;
@@ -107,14 +156,32 @@
   font: 700 1.2rem "Roboto Slab", sans-serif;
   padding: 1em 2em;
   letter-spacing: 0.05rem;
+  border-radius: 15px !important;
+  text-decoration: none !important;
 
   &:focus {
     outline: 2px dotted white;
+    border-radius: 15px;
   }
 }
 
 .sign-up {
-  background-color: white;
-  color: black;
-  border: 5px solid black;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+}
+
+#add-studio {
+  @include btn-border-drawing-two(#41464d, lightblue, 3px);
+  border: 0px solid #41464d;
+  padding-top: 43px !important;
+  justify-content: center;
+  border-radius: 51px !important;
+  font-style: normal;
+  height: 102px;
+}
+
+.add-studio > .studio-info-btn {
+  border: transparent solid 1px !important;
+  text-decoration: none !important;
 }
