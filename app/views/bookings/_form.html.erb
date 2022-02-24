@@ -7,15 +7,15 @@
 <% end %>
 <%= simple_form_for [studio, booking], data: {controller: "bookingform", bookingform_price_value: studio.price} do |f| %>
   <%#= f.input :start_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Start Jamming" %>
-  <%= f.input :start_date, as: :date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Date" %>
+  <%= f.input :start_date, as: :date, html5: true, wrapper_html: {class: 'date-wrapper mb-4'}, label: "Date" %>
 
   <%#= f.input :end_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Bro Home" %>
-  <p class="text-white mb-1">Available hourly time slots:</p>
+  <p class="text-white mb-2">Available hourly time slots:</p>
   <% (9..18).each do |time| %>
     <div class="d-inline-block mb-0">
       <input type="checkbox" name=<%= "time#{time}" %> value=<%= "1" %> id=<%= "time#{time}"%> data-action="click->bookingform#updatePrice" class="form-check-input">
       <label for=<%= "time#{time}" %> class="form-check-label text-white"><%= time_strings[time] %></label>
     </div>
   <% end %>
-  <%= f.submit value: "Book now!", class: "studio-booking-btn mx-auto mt-3", data: {bookingform_target: "submit"} %>
+  <%= f.submit value: "Book now!", class: "studio-booking-btn mx-auto mt-4", data: {bookingform_target: "submit"} %>
 <% end %>
