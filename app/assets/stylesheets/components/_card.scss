@@ -182,7 +182,7 @@
       rgba(57, 57, 57, 0.01) 100%
     ),
     linear-gradient(90deg, hsl(237, 0%, 13%), hsl(237, 0%, 13%));
-  height: 150px;
+  min-height: 140px;
   justify-content: space-between;
   border-radius: 16px;
   .owner-booking-action {
