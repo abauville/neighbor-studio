@@ -1,6 +1,14 @@
 <%= render partial: "shared/navbar" %>
-<% @bookings.each do |booking| %>
-  <% booking[:studio_bookings].each do |studio_booking| %>
-    <%= render partial: "card", locals: {booking: studio_booking } %>
+
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <div class="owner-bookings-cards">
+      <div class="card-studio-name">
+        <h2 class="fw-bold"><%= booking[:studio_name] %></h2>
+        <% booking[:studio_bookings].each do |studio_booking| %>
+          <%= render partial: "card", locals: {booking: studio_booking } %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>
