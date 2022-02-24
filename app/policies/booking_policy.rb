@@ -18,6 +18,14 @@ class BookingPolicy < ApplicationPolicy
     user_is_host? # || user_is_musician?
   end
 
+  def accept?
+    user_is_host?
+  end
+
+  def refuse?
+    user_is_host?
+  end
+
   private
 
   def user_is_musician?
