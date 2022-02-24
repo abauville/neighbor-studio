@@ -5,9 +5,11 @@
 <% (1..11).each do |num| %>
   <% time_strings << "#{num} PM" %>
 <% end %>
+<% puts "======================\n\n\n"%>
+<% puts Date.today.to_s %>
 <%= simple_form_for [studio, booking], data: {controller: "bookingform", bookingform_price_value: studio.price} do |f| %>
   <%#= f.input :start_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Start Jamming" %>
-  <%= f.input :start_date, as: :date, html5: true, wrapper_html: {class: 'date-wrapper mb-4'}, label: "Date" %>
+  <%= f.input :start_date, as: :date, required: true, html5: true, wrapper_html: {class: 'date-wrapper mb-4'}, label: "Date" %>
 
   <%#= f.input :end_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Bro Home" %>
   <p class="text-white mb-2">Available hourly time slots:</p>
