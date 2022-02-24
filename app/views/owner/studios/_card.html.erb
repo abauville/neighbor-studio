@@ -1,0 +1,17 @@
+<div class="studio-card shadow-lg m-5 extra-margin" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.15)), url(<%= cl_image_path(studio.photo.key) %>);">
+  <%= link_to studio_path(studio), class: "d-flex px-4 py-2 w-100" do %>
+    <div class="d-flex flex-column justify-content-end w-100 text-white">
+      <div class="d-flex justify-content-between studio-info p-3">
+        <div class="studio-info-left">
+          <p class="mb-0 text-truncate"><%= studio.name.capitalize %></p>
+          <p class="mb-0">¥<%= studio.price %>/hr</p>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="studio-info-btn py-2 px-2">
+            <p class="mb-0 px-5">Edit</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

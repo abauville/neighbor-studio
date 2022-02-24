@@ -34,8 +34,6 @@
   min-height: 140px;
   position: relative;
 
-
-
   a {
     padding: 8px;
     display: flex;
@@ -50,4 +48,8 @@
     left: 0;
     right: 0;
   }
+}
+
+.extra-margin {
+  margin: 0 330px !important;
 }
