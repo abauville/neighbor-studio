@@ -6,12 +6,14 @@
   <% time_strings << "#{num} PM" %>
 <% end %>
 <%= simple_form_for [studio, booking], data: {controller: "bookingform", bookingform_price_value: studio.price} do |f| %>
-  <%= f.input :start_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Start Jamming" %>
+  <%#= f.input :start_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Start Jamming" %>
+  <%= f.input :start_date, as: :date, html5: true, label: "Time to Start Jamming" %>
+
   <%#= f.input :end_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Bro Home" %>
   <p class="text-white mb-0">Available 1-hour time slots:</p>
   <% (9..18).each do |time| %>
     <div class="d-inline-block mb-0">
-      <input type="checkbox" name=<%= "#{time}" %> value=<%= "#{time}" %> id=<%= "time#{time}"%> data-action="click->bookingform#updatePrice" class="form-check-input">
+      <input type="checkbox" name=<%= "time#{time}" %> value=<%= "1" %> id=<%= "time#{time}"%> data-action="click->bookingform#updatePrice" class="form-check-input">
       <label for=<%= "time#{time}" %> class="form-check-label text-white"><%= time_strings[time] %></label>
     </div>
   <% end %>
