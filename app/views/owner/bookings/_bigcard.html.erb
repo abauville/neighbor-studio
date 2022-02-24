@@ -1,9 +1,7 @@
 <div class="container">
-
-<% @bookings.map {|b| b.studio}.uniq.map {|studio| ({studio.name => studio.bookings })}.each do |n| %>
-  <div class="card-studio-name">
-    <h2><%= n.keys.join %></h2>
-  </div>
-<% end %>
-
+  <% @bookings.each do |booking| %>
+    <div class="card-studio-name">
+      <%= booking[:studio_name] %>
+    </div>
+  <% end %>
 </div>
