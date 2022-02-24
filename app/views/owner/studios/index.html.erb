@@ -1,1 +1,41 @@
 <%= render partial: "shared/navbar" %>
+
+
+<h1 class="text-center mt-5">Your Studios</h1>
+<% @studios.each do |studio| %>
+  <div class="container">
+    <div class="mt-5">
+        <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-4">
+              <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
+                <%= studio.name.capitalize %>
+              </h4>
+              <h5>
+                <%= studio.address %>
+              </h5>
+              <p>
+                ¥<%= studio.price %>
+              </p>
+            </div>
+
+            <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0 text-center">
+              <div class="text-center">
+                <li>
+                <%= studio.description %>
+                </li>
+              </div>
+            </ul>
+
+            <div class="col-12 col-md-4 text-center">
+        <%= cl_image_tag studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+<% end %>
+<div class="text-center">    <%= link_to "Add a Studio", new_studio_path, class: "btn draw-border rounded mb-6", id: "add-studio" %>
+</div>

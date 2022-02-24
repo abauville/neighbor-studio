@@ -118,3 +118,8 @@
   color: black;
   border: 5px solid black;
 }
+
+#add-studio {
+  @include btn-border-drawing(black, lightblue, 4px, bottom, right);
+  border: 0px solid black;
+}
