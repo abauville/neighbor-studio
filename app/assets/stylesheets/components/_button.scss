@@ -45,20 +45,6 @@
   transition: color $duration $duration/3;
   position: relative;
 
-  &::before,
-  &::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    height: 0;
-
-    #{$vertical}: 0;
-    #{$horizontal}: 0;
-  }
-
   &::before {
     $h-side: if($horizontal == "left", "right", "left");
 
@@ -82,6 +68,7 @@
       transition: border-color 0s, width $duration, height $duration;
       width: 100%;
       height: 100%;
+      border-radius: 15px;
     }
 
     &::before {
@@ -110,6 +97,7 @@
 
   &:focus {
     outline: 2px dotted white;
+    border-radius: 15px;
   }
 }
 
@@ -124,6 +112,7 @@
   border: 0px solid black;
   padding-top: 59px !important;
   justify-content: center;
+  border-radius: 15px;
 }
 
 .add-studio > .studio-info-btn {
