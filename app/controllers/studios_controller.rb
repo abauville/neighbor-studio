@@ -8,8 +8,10 @@ class StudiosController < ApplicationController
     @studios = policy_scope(Studio).geocoded
     @title = "All our studios"
     @search_msg = ""
+    @distance_value = params[:distance] || "" # used to autofill the form
+    @address_value = params[:address] || ""
     if params[:address]
-      params[:distance] = params[:distance] || 2
+      params[:distance] = params[:distance].empty? ? 2 : params[:distance]
       studios_found = @studios.near(params[:address], params[:distance])
       if studios_found.empty?
         @search_msg = "We couldn't find studios within #{params[:distance]} km of #{params[:address]}"
@@ -17,7 +19,6 @@ class StudiosController < ApplicationController
         @studios = studios_found
         @title = "Studios within #{params[:distance]} km of #{params[:address]}"
       end
-
     end
     @markers = @studios.map do |studio| #@studios.geocoded.map do |studio|
       {

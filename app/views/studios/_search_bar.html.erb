@@ -2,10 +2,14 @@
   <%# form with autocomplete (deactivated) %><%#= form_with url: studios_path, method: :get, data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY']  } do |form| %>
   <%= form_with url: studios_path, method: :get do |form| %>
     <%= form.label :distance, "Find a studio within:" %>
-    <%= form.text_field :distance, placeholder: "1", id: "distance-input"%>
+    <%= form.text_field :distance,
+                        placeholder: "2",
+                        id: "distance-input",
+                        value: @distance_value%>
     <%= form.label :place, "km of" %>
     <%= form.text_field :address,
-                        placeholder: "Shibuya station", id: "address-input"%>
+                        placeholder: "Shibuya station", id: "address-input",
+                        value: @address_value%>
     <%# address with extra fields for autocomplete%><%#= form.text_field :address,
                         placeholder: "Shibuya",
                         data: { geocoder_target: "address"},
