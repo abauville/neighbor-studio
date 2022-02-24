@@ -10,8 +10,12 @@ class BookingPolicy < ApplicationPolicy
     !user_is_host?
   end
 
+  def edit?
+    update?
+  end
+
   def update?
-    user_is_musician? || user_is_host?
+    user_is_host? # || user_is_musician?
   end
 
   private

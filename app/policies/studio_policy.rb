@@ -18,17 +18,17 @@ class StudioPolicy < ApplicationPolicy
 
   def update?
     # only the logged in user are allowed to update the restaurant
-    user_is_loggedin?
+    user_is_owner?
   end
 
   def destroy?
     # only the logged in user are allowed to destroy the restaurant
-    user_is_loggedin?
+    user_is_owner?
   end
 
   private
 
-  def user_is_loggedin?
+  def user_is_owner?
     user == record.user
   end
 end

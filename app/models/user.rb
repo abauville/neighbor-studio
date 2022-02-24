@@ -7,8 +7,10 @@ class User < ApplicationRecord
 
   has_many :studios, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :bookings_as_owner, through: :studios, source: :bookings
 
   def default_values
     self.name ||= self.email[...self.email.index('@')] # note self.status = 'P' if self.status.nil? might be safer (per @frontendbeauty)
   end
+
 end

@@ -1,6 +1,6 @@
 <%= render partial: "shared/navbar" %>
 <div class="mt-5">
-  <h1 class="text-center">Your Bookings</h1>
+  <h1 class="text-center"><%= current_user.name %>'s Bookings</h1>
 </div>
 
 
@@ -10,40 +10,41 @@
 
 <% @bookings.each do |booking| %>
 
-    <% start_new_string = "#{booking.start_date}" %>
-    <% end_new_string = "#{booking.end_date}" %>
+  <% start_new_string = "#{booking.start_date}" %>
+  <% end_new_string = "#{booking.end_date}" %>
 
-    <% date = Date.strptime(start_new_string, '%Y-%m-%d') %>
-    <% new_start_date = date.strftime('%m-%d-%Y') %>
-    <% date_two = Date.strptime(end_new_string, '%Y-%m-%d') %>
-    <% new_end_date = date_two.strftime('%m-%d-%Y') %>
+  <% date = Date.strptime(start_new_string, '%Y-%m-%d') %>
+  <% new_start_date = date.strftime('%m-%d-%Y') %>
+  <% date_two = Date.strptime(end_new_string, '%Y-%m-%d') %>
+  <% new_end_date = date_two.strftime('%m-%d-%Y') %>
 
 
 
-<div class="container">
-  <div class="mt-5">
-      <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
-        <div class="row align-items-center">
-          <div class="col-12 col-md-4">
-            <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
-              The <%= booking.studio.name %> on <%= new_start_date %>
-            </h4>
+  <div class="container">
+    <div class="mt-5">
+        <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-4">
+              <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
+                <%= booking.studio.name.capitalize %> on <%= new_start_date %>, owner: <%= booking.studio.user.name %>, rentee: <%= booking.user.name %>
+
+              </h4>
+            </div>
+
+            <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
+              <li>
+                <span>
+                  <span class="text-110 text-center"><p class="text-center h4"> from <%= start_new_string[11..15] %> to <%= end_new_string[11..15] %> </p></span>
+                </span>
+              </li>
+            </ul>
+
+            <div class="col-12 col-md-4 text-center">
+              <%= link_to "view studio", studio_path(booking.studio), class: "btn btn-dark" %>
+            </div>
           </div>
 
-          <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
-            <li>
-              <span>
-                <span class="text-110 text-center"><p class="text-center h4"> from <%= start_new_string[11..15] %> to <%= end_new_string[11..15] %> </p></span>
-              </span>
-            </li>
-          </ul>
-
-          <div class="col-12 col-md-4 text-center">
-            <%= link_to "view studio", studio_path(booking.studio), class: "btn btn-dark" %>
-          </div>
         </div>
-
-      </div>
+    </div>
   </div>
-</div>
 <% end %>
