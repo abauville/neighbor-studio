@@ -1,10 +1,10 @@
 <%= render partial: "shared/navbar" %>
 
-<div class="text-center my-5">
-  <%= link_to "Add a Studio", new_studio_path, class: "btn draw-border rounded mb-6", id: "add-studio" %>
+<div class="d-flex justify-content-between">
+  <h1 class="text-left mt-5 mb-5">Your Studios</h1>
+  <%= link_to "Add a Studio", new_studio_path, class: "btn draw-border py-5", id: "add-studio" %>
 </div>
 
-<h1  class="text-center mt-5 mb-5">Your Studios</h1>
 <% @studios.each do |studio| %>
   <%= render partial: "card", locals: {studio: studio}%>
 <% end %>

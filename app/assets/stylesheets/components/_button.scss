@@ -122,4 +122,5 @@
 #add-studio {
   @include btn-border-drawing(black, lightblue, 4px, bottom, right);
   border: 0px solid black;
+  padding-top: 59px !important;
 }
