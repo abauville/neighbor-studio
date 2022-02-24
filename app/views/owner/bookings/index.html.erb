@@ -4,3 +4,48 @@
     <%= render partial: "card", locals: {booking: studio_booking } %>
   <% end %>
 <% end %>
+
+<ul class="nav nav-pills" id="studioBookingTabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all aria-selected="true">All</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="false">Pending</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted" type="button" role="tab" aria-controls="accepted" aria-selected="false">Accepted</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="refused-tab" data-bs-toggle="tab" data-bs-target="#refused" type="button" role="tab" aria-controls="refused" aria-selected="false">Refused</button>
+  </li>
+</ul>
+<div class="tab-content" id="studioBookingTabs">
+  <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+    <% @bookings.each do |booking| %>
+      <% booking[:studio_bookings].each do |studio_booking| %>
+        <%= render partial: "card", locals: {booking: studio_booking } %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+    <% @pending_bookings.each do |booking| %>
+      <% booking[:studio_bookings].each do |studio_booking| %>
+        <%= render partial: "card", locals: {booking: studio_booking } %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="accepted" role="tabpanel" aria-labelledby="accepted-tab">
+    <% @accepted_bookings.each do |booking| %>
+      <% booking[:studio_bookings].each do |studio_booking| %>
+        <%= render partial: "card", locals: {booking: studio_booking } %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="refused" role="tabpanel" aria-labelledby="refused-tab">
+    <% @refused_bookings.each do |booking| %>
+      <% booking[:studio_bookings].each do |studio_booking| %>
+        <%= render partial: "card", locals: {booking: studio_booking } %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
