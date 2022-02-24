@@ -123,6 +123,7 @@
   padding: 1em 2em;
   letter-spacing: 0.05rem;
   border-radius: 15px !important;
+  text-decoration: none !important;
 
   &:focus {
     outline: 2px dotted white;
@@ -147,4 +148,5 @@
 
 .add-studio > .studio-info-btn {
   border: transparent solid 1px !important;
+  text-decoration: none !important;
 }
