@@ -1,4 +1,4 @@
 <%= render partial: "shared/navbar" %>
-<% @bookings.each do |booking| %>
+<% @accepted_bookings.each do |booking| %>
   <%= render partial: "card", locals: {booking: booking} %>
 <% end %>
