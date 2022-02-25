@@ -36,27 +36,21 @@ class BookingsController < ApplicationController
   def accept
     authorize @booking = Booking.find(params[:id])
     @booking.accepted!
-    redirect_to owner_bookings_path
+    redirect_to owner_bookings_path(anchor: "owner-booking-#{@booking.id}")
   end
 
   def refuse
     authorize @booking = Booking.find(params[:id])
     @booking.refused!
-    redirect_to owner_bookings_path
+    redirect_to owner_bookings_path(anchor: "owner-booking-#{@booking.id}")
   end
 
   private
 
   def update_date_params(params)
-    start_time = 0
-    end_time = 0
-    (9..18).each do |time|
-      start_time = time if params["time#{time}"] && start_time == 0
-      end_time = time + 1 if params["time#{time}"]
-    end
     date = params[:booking][:start_date]
-    params[:booking][:start_date] = "#{date}T#{format('%02d', start_time)}:00"
-    params[:booking][:end_date] = "#{date}T#{format('%02d', end_time)}:00"
+    params[:booking][:start_date] = "#{date}T#{format('%02d', params[:start_time])}:00"
+    params[:booking][:end_date] = "#{date}T#{format('%02d', params[:end_time])}:00"
   end
 
   def booking_params

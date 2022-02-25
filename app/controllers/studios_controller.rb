@@ -31,6 +31,7 @@ class StudiosController < ApplicationController
   end
 
   def show
+    @booking = Booking.new(start_date: Date.today) # new booking for the form
     @markers = [{ lat: @studio.latitude, lng: @studio.longitude }]
   end
 
