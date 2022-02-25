@@ -13,13 +13,16 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/markiec/ckzz5088s000415n2taxrb9q9"
+      style: "mapbox://styles/markiec/ckzz5088s000415n2taxrb9q9",
+      center: [139.7690, 35.6804],
+      zoom: 10
     })
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
     this.#getUserLocation()
     this.#cardsHoverHighlightsMarkers()
+    this.#scrollToCardOnPriceHover()
   }
 
   #cardsHoverHighlightsMarkers() {
@@ -33,6 +36,23 @@ export default class extends Controller {
         markers[index].classList.remove("highlighted");
       });
     });
+  }
+
+  #scrollToCardOnPriceHover() {
+    const markers = document.querySelectorAll(".marker");
+    markers.forEach((marker) => {
+      marker.addEventListener("mouseenter", (event) => {
+        const studioId = marker.querySelector('.price-container').dataset.studioId
+        const card = document.getElementById(`studio-card-${studioId}`)
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        card.querySelector(".studio-info-btn").classList.add('active')
+      });
+      marker.addEventListener("mouseleave", (event) => {
+        const studioId = marker.querySelector('.price-container').dataset.studioId
+        const card = document.getElementById(`studio-card-${studioId}`)
+        card.querySelector(".studio-info-btn").classList.remove('active')
+      });
+    })
   }
 
   #addMarkersToMap() {
@@ -60,7 +80,7 @@ export default class extends Controller {
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 3000 })
   }
 
   #getUserLocation() {
