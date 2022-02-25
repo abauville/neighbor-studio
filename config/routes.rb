@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :studios, only: %i[index show new create] do
+  resources :studios, only: %i[index show new create edit update] do
     resources :bookings, only: %i[new create]
   end
   namespace :owner do
