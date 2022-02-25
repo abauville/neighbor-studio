@@ -22,6 +22,7 @@ export default class extends Controller {
     this.#fitMapToMarkers()
     this.#getUserLocation()
     this.#cardsHoverHighlightsMarkers()
+    this.#scrollToCardOnPriceHover()
   }
 
   #cardsHoverHighlightsMarkers() {
@@ -35,6 +36,23 @@ export default class extends Controller {
         markers[index].classList.remove("highlighted");
       });
     });
+  }
+
+  #scrollToCardOnPriceHover() {
+    const markers = document.querySelectorAll(".marker");
+    markers.forEach((marker) => {
+      marker.addEventListener("mouseenter", (event) => {
+        const studioId = marker.querySelector('.price-container').dataset.studioId
+        const card = document.getElementById(`studio-card-${studioId}`)
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        card.querySelector(".studio-info-btn").classList.add('active')
+      });
+      marker.addEventListener("mouseleave", (event) => {
+        const studioId = marker.querySelector('.price-container').dataset.studioId
+        const card = document.getElementById(`studio-card-${studioId}`)
+        card.querySelector(".studio-info-btn").classList.remove('active')
+      });
+    })
   }
 
   #addMarkersToMap() {
