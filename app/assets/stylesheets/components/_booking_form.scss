@@ -1,0 +1,11 @@
+.time-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-bottom: 12px;
+  select {
+    border-radius: 24px;
+  }
+}
+
+// style="border-radius: 24px;"
