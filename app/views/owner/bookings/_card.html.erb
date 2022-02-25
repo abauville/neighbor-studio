@@ -13,10 +13,10 @@
     <div class="d-flex justify-content-evenly">
       <% if booking.pending? %>
       <div class="owner-action-btn btn-accept py-2 px-3">
-        <%= link_to 'Accept', accept_booking_path(booking), method: :patch %>
+        <%= link_to 'Accept', accept_booking_path(booking), method: :patch, remote: true %>
       </div>
       <div class="owner-action-btn btn-decline py-2 px-3">
-        <%= link_to 'Decline', refuse_booking_path(booking), method: :patch %>
+        <%= link_to 'Decline', refuse_booking_path(booking), method: :patch, remote: true %>
       </div>
       <% end %>
     </div>
