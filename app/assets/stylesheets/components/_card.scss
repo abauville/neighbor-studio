@@ -2,6 +2,7 @@
   a {
     text-decoration: none;
   }
+
   width: 400px;
   min-height: 280px;
   display: flex;
@@ -17,6 +18,10 @@
     align-items: center;
     .studio-info-left {
       max-width: 60%;
+    }
+    .active {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: black;
     }
   }
   &:hover {
@@ -190,6 +195,7 @@
     min-width: 40%;
   }
 }
+
 
 .extra-margin {
   margin: 50px 330px !important;

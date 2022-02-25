@@ -1,5 +1,5 @@
 class StudiosController < ApplicationController
-  before_action :set_studio, only: [:show, :edit]
+  before_action :set_studio, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -48,6 +48,17 @@ class StudiosController < ApplicationController
       redirect_to "/studios/#{@studio.id}"
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @studio.update(studio_params)
+      redirect_to owner_studios_path(studio_params)
+    else
+      render :edit
     end
   end
 
