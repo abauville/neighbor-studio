@@ -36,13 +36,13 @@ class BookingsController < ApplicationController
   def accept
     authorize @booking = Booking.find(params[:id])
     @booking.accepted!
-    redirect_to owner_bookings_path
+    redirect_to owner_bookings_path(anchor: "owner-booking-#{@booking.id}")
   end
 
   def refuse
     authorize @booking = Booking.find(params[:id])
     @booking.refused!
-    redirect_to owner_bookings_path
+    redirect_to owner_bookings_path(anchor: "owner-booking-#{@booking.id}")
   end
 
   private
