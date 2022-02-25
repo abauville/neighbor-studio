@@ -41,16 +41,13 @@ export default class extends Controller {
   #scrollToCardOnPriceHover() {
     const markers = document.querySelectorAll(".marker");
     markers.forEach((marker) => {
-      marker.addEventListener("mouseenter", (event) => {
+      marker.addEventListener("mousedown", (event) => {
+        console.log("Cliked!");
         const studioId = marker.querySelector('.price-container').dataset.studioId
         const card = document.getElementById(`studio-card-${studioId}`)
         card.scrollIntoView({ behavior: 'smooth', block: 'center' })
         card.querySelector(".studio-info-btn").classList.add('active')
-      });
-      marker.addEventListener("mouseleave", (event) => {
-        const studioId = marker.querySelector('.price-container').dataset.studioId
-        const card = document.getElementById(`studio-card-${studioId}`)
-        card.querySelector(".studio-info-btn").classList.remove('active')
+        setTimeout(() => {card.querySelector(".studio-info-btn").classList.remove('active')}, 7000);
       });
     })
   }
@@ -58,7 +55,7 @@ export default class extends Controller {
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       if (marker.marker_html) {
-        const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+        // const popup = new mapboxgl.Popup().setHTML(marker.info_window)
         // Create HTML element for custom marker
 
         const customMarker = document.createElement("div");
@@ -67,7 +64,7 @@ export default class extends Controller {
 
         new mapboxgl.Marker(customMarker)
           .setLngLat([ marker.lng, marker.lat ])
-          .setPopup(popup)
+          // .setPopup(popup)
           .addTo(this.map)
       } else {
         new mapboxgl.Marker()
