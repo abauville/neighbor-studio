@@ -1,18 +1,16 @@
 <%= render partial: "shared/navbar" %>
 
-
-
 <div class="container">
-  <h1 class="text-capitalize"><%= @studio.name %></h1>
-    <div class="row">
-        <div class="col-md-6">
-          <p>
-            <%= @studio.description %>
-          </p>
-        </div>
-    <div class="images--flex">
-        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
-      <div class="images--flex">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-capitalize"><%= @studio.name %></h1>
+      <p>
+        <%= @studio.description %>
+      </p>
+      <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+
+    </div>
+    <div class="col">
       <div class="studio-booking-form shadow p-5">
         <div>
           <p class="text-label">
@@ -29,12 +27,11 @@
           <%= render partial: "bookings/form", locals: {booking: Booking.new, studio: @studio} %>
         </div>
       </div>
-        </div>
     </div>
-        <div class="col-md-6">
-        </div>
-    </div>
+  </div>
 </div>
+
+
 
 <div class="container mt-5">
   <h1 class="text-capitalize"><%= @studio.name %></h1>
@@ -44,6 +41,15 @@
       </p>
     </div>
   <div>
+    <div class="images--flex">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+      <div class="images--flex__inner">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+      </div>
+    </div>
   </div>
 </div>
 
