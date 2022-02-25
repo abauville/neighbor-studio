@@ -1,4 +1,4 @@
-<div class="owner-booking-card p-3 m-3 shadow">
+<div id="owner-booking-<%= booking.id %>" class="owner-booking-card p-3 m-3 shadow">
   <div>
     <h2>
       <%= booking.start_date.strftime('%m-%d-%Y')%>
@@ -12,12 +12,16 @@
     <h2 class="text-center text-capitalize"><%= booking.status %></h2>
     <div class="d-flex justify-content-evenly">
       <% if booking.pending? %>
-      <div class="owner-action-btn btn-accept py-2 px-3">
-        <%= link_to 'Accept', accept_booking_path(booking), method: :patch %>
-      </div>
-      <div class="owner-action-btn btn-decline py-2 px-3">
-        <%= link_to 'Decline', refuse_booking_path(booking), method: :patch %>
-      </div>
+        <%= link_to accept_booking_path(booking), method: :patch, remote: true, class: "owner-action-btn btn-accept py-2 px-3" do %>
+          <p class="mb-0">
+            Accept
+          </p>
+        <% end %>
+        <%= link_to refuse_booking_path(booking), method: :patch, remote: true, class: "owner-action-btn btn-decline py-2 px-3" do %>
+          <p class="mb-0">
+            Decline
+          </p>
+        <% end %>
       <% end %>
     </div>
   </div>
