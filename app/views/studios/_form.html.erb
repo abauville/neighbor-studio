@@ -1,9 +1,11 @@
 <div class="container">
-  <%= simple_form_for @studio do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit 'Submit', class: "btn btn-dark"%>
+  <div class="col-8">
+    <%= simple_form_for @studio do |f| %>
+      <%= f.input :name, placeholder: "Beautiful sound proof studio near Shibuya station" %>
+      <%= f.input :address, placeholder: "00-00-0, Jingu-mae, Shibuya-ku, Tokyo, 1500001" %>
+      <%= f.input :description, placeholder: "It is near from Shibuya-station." %>
+      <%= f.input :price, label: "Price (¥/hour)", placeholder: "1000" %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit 'Submit', class: "btn btn-dark"%>
+    </div>
   <% end %>
