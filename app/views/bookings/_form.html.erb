@@ -5,49 +5,55 @@
 <% (1..11).each do |num| %>
   <% time_strings << "#{num} PM" %>
 <% end %>
-<%= simple_form_for [studio, booking], data: {controller: "bookingform", bookingform_price_value: studio.price} do |f| %>
+<%= simple_form_for [studio, booking], data: {controller: "bookingform", bookingform_price_value: studio.price}, id: "booking-form" do |f| %>
   <%#= f.input :start_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Start Jamming" %>
   <%= f.input :start_date, as: :date, html5: true, wrapper_html: {class: 'date-wrapper mb-4'}, label: "Date" %>
 
   <%#= f.input :end_date, html5: true, wrapper_html: {class: 'date-wrapper'}, label: "Time to Bro Home" %>
-  <label for="start-time" class="form-label text-white">From</label>
-  <select id="start-time"
-          class="form-select"
-          aria-label="Default select example"
-          data-bookingform-target="startTime"
-          data-action="change->bookingform#updateEndTimeSelection change->bookingform#updatePrice"
-          name="start_time">
-    <%# <option selected>Open this select menu</option> %>
-    <option value="9" >9 AM</option>
-    <option value="10">10 AM</option>
-    <option value="11">11 AM</option>
-    <option value="12">12 AM</option>
-    <option value="13">1 PM</option>
-    <option value="14">2 PM</option>
-    <option value="15">3 PM</option>
-    <option value="16">4 PM</option>
-    <option value="17">5 PM</option>
-    <option value="18">6 PM</option>
-  </select>
+  <div class="time-container">
+    <div>
+      <label for="start-time" class="form-label text-white">From</label>
+      <select id="start-time"
+              class="form-select"
+              aria-label="Default select example"
+              data-bookingform-target="startTime"
+              data-action="change->bookingform#updateEndTimeSelection change->bookingform#updatePrice"
+              name="start_time">
+        <%# <option selected>Open this select menu</option> %>
+        <option value="9" >9 AM</option>
+        <option value="10">10 AM</option>
+        <option value="11">11 AM</option>
+        <option value="12">12 AM</option>
+        <option value="13">1 PM</option>
+        <option value="14">2 PM</option>
+        <option value="15">3 PM</option>
+        <option value="16">4 PM</option>
+        <option value="17">5 PM</option>
+        <option value="18">6 PM</option>
+      </select>
+    </div>
   <%# <input type="number"> %>
 
-  <label for="end-time" class="form-label text-white mt-2">To</label>
-  <select id="end-time"
-          class="form-select"
-          aria-label="Default select example"
-          data-bookingform-target="endTime"
-          data-action="change->bookingform#updatePrice"
-          name="end_time">
-    <option value="10">10 AM</option>
-    <option value="11">11 AM</option>
-    <option value="12">12 AM</option>
-    <option value="13">1 PM</option>
-    <option value="14">2 PM</option>
-    <option value="15">3 PM</option>
-    <option value="16">4 PM</option>
-    <option value="17">5 PM</option>
-    <option value="18">6 PM</option>
-    <option value="19">7 PM</option>
-  </select>
+    <div>
+      <label for="end-time" class="form-label text-white">To</label>
+      <select id="end-time"
+              class="form-select"
+              aria-label="Default select example"
+              data-bookingform-target="endTime"
+              data-action="change->bookingform#updatePrice"
+              name="end_time">
+        <option value="10">10 AM</option>
+        <option value="11">11 AM</option>
+        <option value="12">12 AM</option>
+        <option value="13">1 PM</option>
+        <option value="14">2 PM</option>
+        <option value="15">3 PM</option>
+        <option value="16">4 PM</option>
+        <option value="17">5 PM</option>
+        <option value="18">6 PM</option>
+        <option value="19">7 PM</option>
+      </select>
+    </div>
+  </div>
   <%= f.submit value: "Book now!", class: "studio-booking-btn mx-auto mt-4", data: {bookingform_target: "submit"} %>
 <% end %>
