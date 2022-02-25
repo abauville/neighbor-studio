@@ -1,0 +1,16 @@
+.card-studio-name{
+  margin: 24px;
+  padding-bottom: 4px;
+  width: 400px;
+  // min-height: 280px;
+  border-radius: 16px;
+  width: -webkit-fill-available;
+  background-size: cover;
+  background-position: center;
+  background-color: #eff1f3;
+  box-shadow: 1px 6px 14px grey;
+  text-transform: capitalize;
+  .fw-bold {
+    padding: 8px 0 0 16px;
+  }
+}

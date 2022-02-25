@@ -45,6 +45,12 @@
     font-weight: 400;
     // color: white;
   }
+  text-decoration: none !important;
+}
+
+.owner-action-btn > a {
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .btn-accept {

@@ -1,0 +1,7 @@
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <div class="card-studio-name">
+      <h2 class="fw-bold"><%= booking[:studio_name] %></h2>
+    </div>
+  <% end %>
+</div>

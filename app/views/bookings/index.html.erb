@@ -3,7 +3,6 @@
   <h1 class="text-center"><%= current_user.name %>'s Bookings</h1>
 </div>
 
-
 <% @bookings.each do |booking| %>
 
   <%= render partial: "card", locals: {booking: booking} %>
