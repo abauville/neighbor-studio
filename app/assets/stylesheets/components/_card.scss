@@ -191,5 +191,6 @@
 }
 
 .extra-margin {
-  margin: 50px 330px !important;
+  flex-grow: 1;
+  max-width: 50%;
 }
