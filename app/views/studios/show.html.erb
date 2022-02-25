@@ -10,11 +10,27 @@
             <%= @studio.description %>
           </p>
         </div>
-        <div class="images--flex">
-            <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
-          <div class="images--flex__inner">
-          </div>
+    <div class="images--flex">
+        <%= cl_image_tag @studio.photo.key, height: 300, width: 400, crop: :fill, class: "img-responsive p-1" %>
+      <div class="images--flex">
+      <div class="studio-booking-form shadow p-5">
+        <div>
+          <p class="text-label">
+            <span class="text-lg text-white"><i class="fas fa-map me-2"></i>Address: </span><%= @studio.address %>
+          </p>
+          <p id="user-distance" class="text-label">
+            <span class="text-lg text-white"><i class="fas fa-map-marked-alt me-2"></i>Distance: </span>N/A
+          </p>
+          <p class="text-label">
+            <span class="text-lg text-white"><i class="fas fa-tag me-2"></i>Price: </span>¥<%= @studio.price %>/hr
+          </p>
         </div>
+        <div>
+          <%= render partial: "bookings/form", locals: {booking: Booking.new, studio: @studio} %>
+        </div>
+      </div>
+        </div>
+    </div>
         <div class="col-md-6">
         </div>
     </div>
