@@ -19,7 +19,6 @@
         <div class="d-flex flex-column text-center flex-lg-row">
         </div>
         <div class="nav-item dropdown d-flex justify-content-center">
-          <%= image_tag "default-avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-end col-xs-1 text-center" aria-labelledby="navbarDropdown">
             <b>Studio Renter</b>
             <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
@@ -27,10 +26,8 @@
             <%= link_to "Manage Bookings", owner_bookings_path, class: "dropdown-item" %>
             <%= link_to "Manage Studios", owner_studios_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-
           </div>
         </div>
-
       </div>
     </div>
   </nav>
