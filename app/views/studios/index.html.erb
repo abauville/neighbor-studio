@@ -13,9 +13,10 @@
       <% end %>
     </div>
   </div>
-  <%# Note: the map uses a custom map-sticky instead of the bootstrap one,
+  <%# Note: the map uses a custom sidebar instead of the bootstrap one,
   because the bootstrap sticky has a z-index on top of the avatar dropdown %>
-  <div class="container-fluid mt-4 mr-5 pr-5 map-sticky" id="sidebar"
+  <div class="mt-4 mr-5 pr-5"
+    id="sidebar"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
