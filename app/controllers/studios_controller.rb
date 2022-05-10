@@ -1,6 +1,6 @@
 class StudiosController < ApplicationController
-  before_action :set_studio, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_studio, only: %i[show edit update]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     # @studios = Studio.all
@@ -20,7 +20,7 @@ class StudiosController < ApplicationController
         @title = "Studios within #{params[:distance]} km of #{params[:address]}"
       end
     end
-    @markers = @studios.map do |studio| #@studios.geocoded.map do |studio|
+    @markers = @studios.map do |studio| # @studios.geocoded.map do |studio|
       {
         lat: studio.latitude,
         lng: studio.longitude,
